@@ -81,6 +81,9 @@ nav {
     color: #283579;
     cursor: pointer;
 }
+nav :hover {
+    background-color: #e4faff;
+}
 #trlogo-header {
     height: 4rem;
     align-items: center;
@@ -308,6 +311,7 @@ main {
         margin: 5px auto 15px auto;
         box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
         border-radius: 12px;
+        background-color: #F4FBFF;
         overflow: hidden;
     }
     .dropdown-content a {
@@ -316,6 +320,7 @@ main {
         text-decoration: none;
         display: block;
         transition: background-color 0.3s;
+        border-top: 1px solid #BEE4F8;
     }
     .dropdown-content a:first-child {
         border-top: none;

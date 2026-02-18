@@ -1,0 +1,196 @@
+/* Banner Styles */
+.job-banner img{
+    width: 100%; 
+    height: auto; 
+    display: block;  
+    object-fit: cover; 
+}
+#collab {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #46D3FA 100%);
+}
+#resume {
+    background-color: #D5F4FF;
+}
+.banner-text h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+}
+
+.banner-text h1 {
+    font-family: 'Madimi One', sans-serif;
+    font-size: 4rem;
+    color: #283579;
+    line-height: 1.1;
+}
+
+.banner-img img {
+    max-height: 350px;
+    object-fit: cover;
+    mask-image: linear-gradient(to left, black 80%, transparent 100%); /* ลูกเล่นให้ภาพจางทางซ้าย */
+    -webkit-mask-image: linear-gradient(to left, black 80%, transparent 100%);
+}
+
+/* Filter Section Styles */
+.filter-section {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50%); /* ดึงขึ้นไปทับ Banner นิดหน่อย หรือจะเอาออกก็ได้ถ้าอยากให้ห่าง */
+    margin-bottom: -30px; /* ชดเชยพื้นที่ที่ดึงขึ้นไป */
+    padding: 0 1em;
+}
+
+.search-bar {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 50px; /* ทำขอบมนรี */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+.input-group i {
+    color: #283579;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.input-group input, 
+.input-group select {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: "Noto Sans Thai", sans-serif;
+    font-size: 1rem;
+    color: #283579;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* เส้นคั่นระหว่างช่องค้นหา */
+.divider {
+    width: 2px;
+    height: 30px;
+    background-color: #e0e0e0;
+}
+
+/* Job List Grid Styles */
+.job-list-container {
+    padding: 4em 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    justify-content: center;
+}
+
+.job-card {
+    background-color: #ffffff;
+    border: 2px solid #579BC3; /* สีขอบฟ้าตามแบบ */
+    border-radius: 12px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    min-height: 300px;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+}
+
+.card-content h4 {
+    font-size: 1.5rem;
+    color: #283579;
+    margin-bottom: 1em;
+}
+
+.card-content p {
+    color: #333;
+    margin-bottom: 0.3em;
+    font-size: 1rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-apply {
+    background-color: #1E88B8; /* สีปุ่มสมัคร */
+    color: white;
+}
+.btn-apply:hover {
+    background-color: #166a91;
+}
+
+.btn-detail {
+    background-color: #1E88B8; /* สีปุ่ม Detail (ในรูปเป็นสีเดียวกัน) */
+    color: white;
+}
+.btn-detail:hover {
+    background-color: #166a91;
+}
+
+/* Responsive สำหรับหน้าจอเล็ก */
+@media screen and (max-width: 768px) {
+    .job-banner {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding-bottom: 4em;
+    }
+    
+    .search-bar {
+        flex-direction: column;
+        border-radius: 16px;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .filter-section {
+        transform: translateY(-20px);
+    }
+
+    .input-group {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+    }
+}

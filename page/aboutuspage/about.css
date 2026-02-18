@@ -1,0 +1,106 @@
+/* =========================================
+   ส่วนเนื้อหาหลัก (Main Content Styling)
+   ========================================= */
+
+/* โหลดฟอนต์ Kanit สำหรับหัวข้อเพื่อให้เหมือนในรูป */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap');
+
+/* จัดกึ่งกลางเนื้อหา */
+main .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* รูปภาพในเนื้อหา */
+.img-fluid {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* หัวข้อ TANGRIAN (สีน้ำเงินเข้ม) */
+.brand-logo {
+    font-family: 'Madimi One', sans-serif; /* หรือใช้ Madimi One ตาม Header ก็ได้ */
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2e3b76;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+/* หัวข้อย่อย (สีน้ำเงิน) */
+.main-headline {
+    font-family: "Noto Sans Thai", sans-serif; /* ใช้ Kanit หรือ Noto Sans Thai */
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2e3b76;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/* เนื้อหาข้อความ (สีเทาฟ้า) */
+.content-text {
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-size: 1.1rem;
+    color: #6c8ea8; /* ปรับสีให้ตรงกับรูป */
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+/* จัดระยะห่าง Section */
+.header-section, .intro-content, .interior-image, .bottom-content {
+    margin-bottom: 40px;
+}
+
+/* =========================================
+   Animation Classes (สำหรับ Fade In)
+   ========================================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* เลื่อนลงมานิดหน่อยตอนแรก */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* เลื่อนกลับไปที่เดิม */
+}
+
+/* Responsive สำหรับมือถือ */
+@media screen and (max-width: 600px) {
+    .brand-logo {
+        font-size: 2.5rem;
+    }
+    .main-headline {
+        font-size: 1.2rem;
+    }
+    .content-text {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+
+/* จัดส่วนเนื้อหาด้านล่างให้อยู่กึ่งกลาง */
+.bottom-content {
+    text-align: center;       /* สั่งให้ข้อความทั้งหมดในส่วนนี้อยู่ตรงกลาง */
+    max-width: 900px;         /* กำหนดความกว้างไม่ให้ยาวเกินไป จะได้อ่านง่าย */
+    margin: 0 auto;           /* จัดกล่องให้อยู่กลางหน้าจอ (ซ้าย-ขวา เท่ากัน) */
+    padding: 20px 15px;       /* เว้นระยะขอบเล็กน้อย */
+}
+
+/* ปรับแต่ง Paragraph ด้านในเพิ่มเติม */
+.bottom-content .content-text {
+    text-align: center;       /* ย้ำให้ตัวหนังสืออยู่ตรงกลาง */
+    display: inline-block;    /* จัดบล็อกให้อยู่ในแนวที่จัดกลางได้ง่าย */
+    width: 100%;              /* ให้ความกว้างเต็ม container */
+    margin-bottom: 20px;      /* เว้นระยะห่างระหว่างย่อหน้า */
+    line-height: 1.8;         /* เพิ่มระยะห่างบรรทัดให้อ่านง่าย */
+    color: #6c8ea8;           /* สีเทาฟ้าตามธีม */
+}
