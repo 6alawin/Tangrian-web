@@ -254,19 +254,27 @@ main {
     }
     #nav-menu {
         display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #ffffff;
         position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        padding-bottom: 1em;
-        box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
-        z-index: 999;
-        border: none;
-        border-top: none;
-        border-radius: 0 0 16px 16px;
+        
+        /* 1. ย่อขนาด (ไม่ให้เต็มจอ) */
+        width: 90% !important;  /* เหลือ 90% พอ */
+        left: 5% !important;    /* เว้นซ้าย 5% (เพื่อให้รวมกันได้ 100% = อยู่ตรงกลาง) */
+        right: auto;            /* ล้างค่าขวา */
+
+        /* 2. ดึงลงมาจากข้างบน */
+        top: 100% !important;
+        margin-top: 0 !important; /* เว้นระยะห่างจาก Header */
+
+        /* 3. ตกแต่งให้เป็นกล่องการ์ด */
+        background-color: #ffffff !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important; /* เงาฟุ้งๆ */
+        border-radius: 15px !important; /* มนทุกมุม */
+        border: none !important;
+
+        /* จัดเนื้อหาข้างใน */
+        padding: 20px 0 !important;
+        display: none; /* ซ่อนไว้ก่อน (รอ JS สั่งเปิด) */
+        flex-direction: column;
     }
     header {
         height: auto;

@@ -70,5 +70,18 @@ input, textarea {
         background: #D5F4FF;
         border-radius: 10px;
      }
+    .contact-img {
+        display: none !important;
+    }
+    
+    .contact-img img{
+        display: none !important;
+    }
+
+    /* แถม: ขยายส่วนข้อมูลให้เต็มจอแทน */
+    .contact-form {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+    }
      
 }
