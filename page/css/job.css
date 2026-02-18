@@ -364,15 +364,11 @@ main {
 /* --- ส่วนเพิ่มเติมสำหรับหน้าสมัครงาน --- */
 
 /* Banner Styles */
-.job-banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(90deg, #AEE8FA 0%, #D5F4FF 100%); /* ไล่สีฟ้าอ่อน */
-    padding: 3em 10%;
-    overflow: hidden;
-    position: relative;
-    height: 350px; /* กำหนดความสูงให้พอดีรูป */
+.job-banner img{
+    width: 100%; 
+    height: auto; 
+    display: block;  
+    object-fit: cover; 
 }
 
 .banner-text h2 {
@@ -534,9 +530,6 @@ main {
         text-align: center;
         height: auto;
         padding-bottom: 4em;
-    }
-    .banner-img img {
-        display: none; /* ซ่อนรูป banner บนมือถือ หรือปรับขนาดตามต้องการ */
     }
     
     .search-bar {
