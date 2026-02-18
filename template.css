@@ -111,45 +111,68 @@ nav :hover {
     border-radius: 10px 10px 0 0;
 }
 
-
-.dropdown {
+.dropdown-container {
     position: relative;
     display: inline-block;
 }
+
 .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-   
-    background-color: #ffffff;
+    display: none; /* ซ่อนไว้ก่อน */
+    background-color: #fff;
     min-width: 180px;
-    border: 2px solid #076199;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    border-radius: 0 0 16px 16px;
-    z-index: 20;
+    z-index: 100;
+    border-radius:0 0 8px 8px;
     overflow: hidden;
 }
+
 .dropdown-content a {
-    border-top: 2px solid #076199;
-    color: #283579;
-    padding: 8px 20px;
+    color: #333;
+    padding: 12px 16px;
     text-decoration: none;
     display: block;
-    transition: background-color 0.3s;
+    border-bottom: 1px solid #eee;
 }
-.dropdown-content a:first-child{
-    border-top: none;
-}
-.dropdown-content a:hover {
-    background-color: #e4faff;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown:hover #collab i {
-    transform: rotate(180deg);
+
+/* --- 💻 สำหรับจอคอม (Desktop) : ใช้ Hover --- */
+@media screen and (min-width: 769px) {
+    
+    /* 1. จัดกล่องครอบให้เข้าแถวเดียวกับเพื่อน */
+    .dropdown-container {
+        display: inline-flex; /* ให้เรียงแนวนอน */
+        align-items: center;  /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+        height: 100%;         /* ความสูงเท่าเมนูอื่น */
+        vertical-align: middle;
+    }
+
+    /* 2. จัดตัวปุ่มให้ชิดขอบพอดี */
+    .dropbtn {
+        display: flex;
+        align-items: center;
+        gap: 5px; /* ระยะห่างระหว่างตัวหนังสือกับลูกศร */
+        height: 100%;
+        margin: 0; /* ล้างระยะขอบ */
+        /* ถ้าเมนูอื่นมี Padding ต้องใส่ให้เท่ากันตรงนี้ด้วย */
+    }
+
+    /* ชี้แล้วเมนูโผล่ */
+    .dropdown-container:hover .dropdown-content {
+        display: block;
+        position: absolute;
+        top: 100%; /* ให้เริ่มต่อจากขอบล่างพอดี */
+        left: 0;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+        margin-top: 0; /* แก้กันมันดีด */
+    }
+
+    /* สีตอน Hover */
+    .dropdown-container:hover {
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        color: #076199;
+    }
 }
 
 
@@ -300,29 +323,43 @@ main {
     }
 
 
-    .dropdown {
+    .dropdown-container {
+        display: block;
         width: 100%;
-        text-align: center;
+        text-align: center; /* สั่งจัดกลางระดับ Parent */
     }
+
+    /* 1. แก้ปุ่มกด: ให้ข้อความกับลูกศรมาอยู่ตรงกลาง */
+    .dropbtn {
+        display: flex;
+        justify-content: center; /* สำคัญ! จัดให้อยู่กึ่งกลางแนวนอน */
+        align-items: center;     /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+        width: 100%;
+        gap: 10px;               /* ระยะห่างระหว่าง "ข้อความ" กับ "ลูกศร" */
+        margin: 0 auto;          /* จัดกึ่งกลางเผื่อเหลือขอบ */
+    }
+
+    /* 2. แก้ไส้ในเมนู: ให้ตัวหนังสืออยู่ตรงกลาง */
     .dropdown-content {
         position: static;
-        transform: none;
-        width: 80%;
-        margin: 5px auto 15px auto;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-        border-radius: 12px;
-        background-color: #F4FBFF;
-        overflow: hidden;
+        width: 100%;
+        box-shadow: none;
+        background-color: #f9f9f9;
+        
+        /* ลบ padding-left เดิมออก เพื่อให้มันกลางเป๊ะๆ ไม่เอียงขวา */
+        padding-left: 0; 
+        text-align: center; 
     }
+
     .dropdown-content a {
-        color: #283579;
-        padding: 12px 20px;
-        text-decoration: none;
+        text-align: center; /* บังคับตัวหนังสือให้อยู่ตรงกลาง */
+        padding: 15px;      /* เพิ่มพื้นที่กดให้นิ้วจิ้มง่าย */
         display: block;
-        transition: background-color 0.3s;
-        border-top: 1px solid #BEE4F8;
     }
-    .dropdown-content a:first-child {
-        border-top: none;
+
+    /* คลาสเปิดปิด */
+    .dropdown-content.show {
+        display: block;
     }
+    
 }
