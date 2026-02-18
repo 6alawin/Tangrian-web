@@ -1,0 +1,85 @@
+.hero img { width: 100%; height: auto; display: block; align-items: center;}
+.hero-text {
+    text-align: center;
+    padding: 20px;
+    color: #005b8e;
+}
+#home {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #46D3FA 100%);
+    color: #000; /* สีตัวอักษร */
+    border-radius: 10px 10px 0 0; /* ทำให้ขอบมนด้านบน */
+    
+}
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.highlight-title {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 20px;
+}
+.highlight-title span { color: #005b8e; }
+
+.mascot-center img {
+    width: 150px;
+    margin: 20px 0;
+}
+
+.video-placeholder {
+    background: #ccc;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 20px 0;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn-primary { background: #006eb3; color: white; }
+.btn-outline { border: 2px solid #006eb3; color: #006eb3; }
+
+
+.video-link {
+    margin-top: 30px; 
+    text-align: center; 
+    margin-bottom:  0px; 
+}
+.video-link a {
+    display: inline-block;
+    text-decoration: none;
+    color: #0077b6; 
+    border: 2px solid #0077b6; 
+    padding: 10px 30px; 
+    border-radius: 50px; 
+    font-weight: bold;
+    font-family: 'Prompt', sans-serif;
+    transition: all 0.3s;
+    background-color: white;
+}
+
+@media screen  and (max-width: 768px) {
+    #home {
+        background: #D5F4FF;
+        border-radius: 10px;
+     }
+}

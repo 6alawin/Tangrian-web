@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tangrian</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/template.css">
+    <link rel="stylesheet" href="branch.css">
+</head>
+<body>
+    <header>
+        <section class="logo">
+            <img src="/images/TRlogo.png" alt="Tangrian Logo" id="trlogo-header">
+            <h1 id="tangrian-logo-text">Tangrian</h1>
+        </section>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="bxf bx-menu-close"></i>
+        </div>
+        <nav id="nav-menu">
+            <a href="/page/indexpage/index.html" id="home" class="nav-menu">หน้าแรก</a>
+            <a href="/page/aboutuspage/about.html" id="about-us" class="nav-menu">เกี่ยวกับเรา</a>
+            <a href="/page/branchpage/branch.html" id="branch" class="nav-menu">สาขา</a>
+            <div class="dropdown">
+                <a href="#" id="collab" class="nav-menu active">ร่วมงานกับเรา <i class="bxf bx-caret-big-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="/page/investpage/investwithus.html">ลงทุนแฟรนไชน์</a>
+                    <a href="/page/jobpage/job.html">สมัครงาน</a>
+                </div>
+            </div>
+            <a href="" id="news" class="nav-menu">ข่าวสาร</a>
+            <a href="/page/contactpage/contact.html" id="contact" class="nav-menu">ติดต่อเรา</a>
+        </nav>
+    </header>
+    <main>
+        <section class="banner"><img src="/images/investwithus.png" alt=""></section>
+        
+        <section class="branch-container">
+            <h2 class="section-header">TANGRIAN</h2>
+            <div id="tangrian-list" class="branch-grid">
+                <p class="loading-text">กำลังโหลดข้อมูลสาขา...</p>
+            </div>
+
+            <br><br>
+
+            <h2 class="section-header">OTHER</h2>
+            <div id="other-list" class="branch-grid">
+                </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-content">
+            <div class="footerlogo-info">
+                <section class="logo-footer">
+                    <img src="/images/TRlogo.png" alt="Tangrian Logo" id="trlogo-footer">
+                    <h1 id="tangrian-logo-text">Tangrian</h1>
+                </section>
+                <br>
+
+                <p>แฟรนไชส์เครื่องซักผ้าหยอดเหรียญใช้เทคโนโลยีเครื่องซักผ้าคุณภาพดี LG Commercial แฟรนไชส์ซักอบที่ดูแลผู้ลงทุนร้านซักผ้าอย่างครบวงจร ตั้งแต่วางแผนจนถึงวันเริ่มธุรกิจแฟรนไชส์ร้านซักผ้ารับประกันเครื่อง 1 ปี เปิดร้านสะดวกซักได้ภายใน 1 เดือน</p>
+            </div>
+            <div class="footeraddress">
+                <h3>บริษัท ตังฆ์เหรียญ จำกัด</h3>
+                <br>
+                <p>สำนักงานใหญ่ เลขที่99/405 หมู่ที่5 ต.เกาะเรียน อ.พระนครศรีอยุธยา จ.พระนครศรีอยุธยา, 13000 <br>Tel: 089 803 8654 <br>hananatasha1313@gmail.com</p>
+            </div>
+        </section>
+        <section class="contact-nav">
+            <a href="https://line.me/ti/p/~tangrian.th"  id="line-icon" aria-label="Line"><i class="fa-brands fa-line"></i></a>
+            <a href="tel:0898991989" id="phone-icon" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://www.facebook.com/Tangrian.tj"  id="fb-icon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://shopee.co.th/tangrian_official" id="shopee-icon" aria-label="Shopee"><img src="/images/shopeelogo.png" alt=""></a>
+        </section>
+    </footer>
+    <div id="branch-modal" class="modal">
+        <div class="modal-content">
+            
+            <div class="slider-container">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                
+                <button class="nav-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+                <img id="modal-img" src="" alt="Branch Image">
+                <button class="nav-btn next" onclick="changeSlide(1)">&#10095;</button>
+                
+                <div id="slide-counter" style="position: absolute; bottom: 10px; right: 10px; color: white; background: rgba(0,0,0,0.5); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;"></div>
+            </div>
+
+            <div class="modal-details">
+                <h2 id="modal-title">ชื่อสาขา</h2>
+                <p id="modal-desc" style="color:#555; white-space: pre-wrap;">รายละเอียด...</p>
+            </div>
+        </div>
+    </div>
+<script src="/template.js"></script>
+<script type="module" src="/page/branchpage/branch.js"></script>
+</body>
+</html> 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการสาขา - Admin Tangrian</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🛠️ ระบบจัดการสาขา (Admin)</h1>
+
+        <div class="form-card">
+            <h2 id="form-title">เพิ่มสาขาใหม่</h2>
+            <form id="branch-form">
+                <input type="hidden" id="doc-id"> <div class="form-group">
+                    <label>ชื่อสาขา:</label>
+                    <input type="text" id="name" required placeholder="เช่น สาขาอยุธยา">
+                </div>
+
+                <div class="form-group">
+                    <label>หมวดหมู่:</label>
+                    <select id="category">
+                        <option value="tangrian">Tangrian (ร้านตังฆ์เหรียญ)</option>
+                        <option value="other">Other (ลูกค้าแฟรนไชส์)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>รายละเอียด:</label>
+                    <textarea id="detail" rows="3" placeholder="รายละเอียดสาขา..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>ลิงก์รูปปก (URL):</label>
+                    <input type="text" id="imgUrl" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label>อัลบั้มรูปเพิ่มเติม (Gallery):</label>
+                    <small style="color:gray">*ใส่ลิงก์รูป บรรทัดละ 1 ลิงก์</small>
+                    <textarea id="gallery" rows="4" placeholder="https://image1.jpg&#10;https://image2.jpg"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>ลิงก์ Google Map:</label>
+                    <input type="text" id="mapLink" placeholder="https://maps.google.com/...">
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" class="btn save">บันทึกข้อมูล</button>
+                    <button type="button" class="btn cancel" onclick="resetForm()" style="display:none;" id="cancel-btn">ยกเลิกแก้ไข</button>
+                </div>
+            </form>
+        </div>
+
+        <hr>
+
+        <h2>รายชื่อสาขาทั้งหมด</h2>
+        <div id="loading">กำลังโหลดข้อมูล...</div>
+        <table class="branch-table">
+            <thead>
+                <tr>
+                    <th>รูป</th>
+                    <th>ชื่อสาขา</th>
+                    <th>หมวด</th>
+                    <th>จัดการ</th>
+                </tr>
+            </thead>
+            <tbody id="branch-list">
+                </tbody>
+        </table>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

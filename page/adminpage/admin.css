@@ -1,0 +1,70 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: #f4f6f9;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1, h2 { color: #333; }
+
+.form-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* สำคัญ */
+}
+
+.btn-group { margin-top: 20px; }
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+}
+.save { background-color: #28a745; }
+.save:hover { background-color: #218838; }
+.cancel { background-color: #6c757d; }
+.delete { background-color: #dc3545; padding: 5px 10px; font-size: 0.9rem;}
+.edit { background-color: #ffc107; color: #000; padding: 5px 10px; font-size: 0.9rem;}
+
+/* Table */
+.branch-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.branch-table th, .branch-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+.branch-table th { background-color: #076199; color: white; }
+
+.badge {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: white;
+}
+.badge.tangrian { background-color: #076199; }
+.badge.other { background-color: #e67e22; }

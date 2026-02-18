@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Noto+Sans+Thai:wght@100..900&family=Sarabun:wght@400;500;700&display=swap');
+.noto-sans-thai-noto {
+    font-family: "Noto Sans Thai", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100 900;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    }
+.madimi-one-regular {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.sarabun-regular {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.sarabun-medium {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.sarabun-bold {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+body {
+    font-family: "Noto Sans Thai", sans-serif;
+}
+
+header {
+    position: relative;
+    background-color: #D5F4FF;
+    color: white;
+    height: min(6.8em);
+}
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 2rem;
+    color: #283579;
+    cursor: pointer;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    font-family: 'Madimi One', sans-serif;
+    padding-top: 0.4em;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 0.4em;
+}
+.nav-menu {
+    color: #000;
+    padding: 4px 16px;
+    border-radius: 10px 10px 0 0;
+}
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 2rem;
+    color: #283579;
+    cursor: pointer;
+}
+#trlogo-header {
+    height: 4rem;
+    align-items: center;
+    padding-right: 1em;
+}
+#tangrian-logo-text {
+    color: #283579;
+    padding-top: 0.2rem;
+}
+#collab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+#collab i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    color: #283579;
+}
+#collab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    /* ใส่ Gradient สีฟ้าตามที่คุณต้องการ */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #46D3FA 100%);
+    
+    /* จัดขอบมนและสีตัวอักษร */
+    border-radius: 10px 10px 0 0;
+    color: #283579; /* ผมแนะนำให้ใช้สีน้ำเงินเข้มของแบรนด์ เพื่อให้อ่านง่ายกว่าสีดำ (#000) */
+    font-weight: bold; /* เพิ่มความหนาหน่อยให้รู้ว่าเป็นหน้าปัจจุบัน */
+}
+
+
+.nav-menu {
+    color: #000;
+    padding: 8px 16px; /* ปรับ padding ให้ดูเต็มขึ้นเล็กน้อย */
+    border-radius: 10px 10px 0 0;
+    transition: all 0.3s ease; /* เพิ่ม transition ให้นุ่มนวล */
+}
+.btn-apply {
+    /* สีไล่ระดับฟ้าเข้ม */
+    background: linear-gradient(180deg, #46D3FA 0%, #2D95C4 100%);
+    color: white;
+    border: none;
+    /* ...ค่าอื่นๆ คงเดิม... */
+}
+
+.btn-apply:hover {
+    background: linear-gradient(180deg, #2D95C4 0%, #20769e 100%);
+}
+/* เมื่อเอาเมาส์ชี้ที่เมนู */
+.nav-menu:hover {
+    background-color: #1E88B8; /* สีฟ้าเข้ม (สีเดียวกับปุ่มสมัครงาน) */
+    color: #ffffff;            /* เปลี่ยนตัวหนังสือเป็นสีขาว */
+}
+#invest {
+    background-color: #D5F4FF;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    background-color: #ffffff;
+    min-width: 180px;
+    border: 2px solid #076199;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    border-radius: 0 0 16px 16px;
+    z-index: 10;
+    overflow: hidden;
+}
+.dropdown-content a {
+    border-top: 2px solid #076199;
+    color: #283579;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+.dropdown-content a:first-child{
+    border-top: none;
+}
+.dropdown-content a:hover {
+    background-color: #e4faff;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover #collab i {
+    transform: rotate(180deg);
+}
+
+
+footer {
+    background-color: #D5F4FF;
+    display: block;
+    height: auto;
+    padding: 2em 5% 8em 5%;
+}
+.footer-content {
+    display: flex;
+    gap: 2em;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#trlogo-footer {
+    height: 6em;
+    margin: 0;
+}
+.logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo-footer #tangrian-logo-text {
+    padding-top: 0;
+}
+.footerlogo-info  p{
+    color: #777777;
+    width: 100%;
+    max-width: 28em;
+}
+.footeraddress {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2em;
+}
+.footeraddress h3 {
+    color: #283579;
+}
+.footeraddress p {
+    color: #777777;
+}
+.contact-nav {
+    padding-top: 4em;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+.contact-nav a{
+    font-size: 3rem;
+}
+#fb-icon {
+    color: #3b5998;
+}
+#phone-icon {
+    color: #25D366;
+}
+#line-icon {
+    color: #00c300;
+}
+#shopee-icon img {
+    margin-top: 0.2em;
+    height: 1em;
+}
+main {
+    height: auto;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, #D5F4FF 100%);
+    background-size: 100% 48em;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding-bottom: 1em;
+        box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+        z-index: 999;
+        border: none;
+        border-top: none;
+        border-radius: 0 0 16px 16px;
+    }
+    #collab {
+        background: #D5F4FF;
+        border-radius: 10px;
+    }
+    header {
+        height: auto;
+        padding-bottom: 1em;
+    }
+    nav {
+        flex-wrap: wrap;
+        gap: 0.5em;
+        padding: 0 1em;
+    }
+    #nav-menu.active {
+        display: flex;
+    }
+    .nav-menu {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-radius: 0;
+    }
+
+
+    footer {
+        height: auto;
+        padding: 2em 1em;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 2em;
+        align-items: center;
+        text-align: center;
+    }
+    .footerlogo-info p {
+        width: 100%;
+        max-width: 400px;
+    }
+    .footeraddress {
+        padding-top: 0;
+    }
+    .logo-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+
+    .contact-nav {
+        padding-top: 2em;
+        gap: 1.5em;
+        flex-wrap: wrap;
+    }
+    .contact-nav a {
+        font-size: 2.5rem;
+    }
+
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+    .dropdown-content {
+        position: static;
+        transform: none;
+        width: 80%;
+        margin: 5px auto 15px auto;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        background-color: #F4FBFF;
+        overflow: hidden;
+    }
+    .dropdown-content a {
+        color: #283579;
+        padding: 12px 20px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s;
+        border-top: 1px solid #BEE4F8;
+    }
+    .dropdown-content a:first-child {
+        border-top: none;
+    }
+}
+
+/* --- ส่วนเพิ่มเติมสำหรับหน้าสมัครงาน --- */
+
+/* Banner Styles */
+.job-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #AEE8FA 0%, #D5F4FF 100%); /* ไล่สีฟ้าอ่อน */
+    padding: 3em 10%;
+    overflow: hidden;
+    position: relative;
+    height: 350px; /* กำหนดความสูงให้พอดีรูป */
+}
+
+.banner-text h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+}
+
+.banner-text h1 {
+    font-family: 'Madimi One', sans-serif;
+    font-size: 4rem;
+    color: #283579;
+    line-height: 1.1;
+}
+
+.banner-img img {
+    max-height: 350px;
+    object-fit: cover;
+    mask-image: linear-gradient(to left, black 80%, transparent 100%); /* ลูกเล่นให้ภาพจางทางซ้าย */
+    -webkit-mask-image: linear-gradient(to left, black 80%, transparent 100%);
+}
+
+/* Filter Section Styles */
+.filter-section {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50%); /* ดึงขึ้นไปทับ Banner นิดหน่อย หรือจะเอาออกก็ได้ถ้าอยากให้ห่าง */
+    margin-bottom: -30px; /* ชดเชยพื้นที่ที่ดึงขึ้นไป */
+    padding: 0 1em;
+}
+
+.search-bar {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 50px; /* ทำขอบมนรี */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+.input-group i {
+    color: #283579;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.input-group input, 
+.input-group select {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: "Noto Sans Thai", sans-serif;
+    font-size: 1rem;
+    color: #283579;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* เส้นคั่นระหว่างช่องค้นหา */
+.divider {
+    width: 2px;
+    height: 30px;
+    background-color: #e0e0e0;
+}
+
+/* Job List Grid Styles */
+.job-list-container {
+    padding: 4em 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    justify-content: center;
+}
+
+.job-card {
+    background-color: #ffffff;
+    border: 2px solid #579BC3; /* สีขอบฟ้าตามแบบ */
+    border-radius: 12px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    min-height: 300px;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+}
+
+.card-content h4 {
+    font-size: 1.5rem;
+    color: #283579;
+    margin-bottom: 1em;
+}
+
+.card-content p {
+    color: #333;
+    margin-bottom: 0.3em;
+    font-size: 1rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-apply {
+    background-color: #1E88B8; /* สีปุ่มสมัคร */
+    color: white;
+}
+.btn-apply:hover {
+    background-color: #166a91;
+}
+
+.btn-detail {
+    background-color: #1E88B8; /* สีปุ่ม Detail (ในรูปเป็นสีเดียวกัน) */
+    color: white;
+}
+.btn-detail:hover {
+    background-color: #166a91;
+}
+
+/* Responsive สำหรับหน้าจอเล็ก */
+@media screen and (max-width: 768px) {
+    .job-banner {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding-bottom: 4em;
+    }
+    .banner-img img {
+        display: none; /* ซ่อนรูป banner บนมือถือ หรือปรับขนาดตามต้องการ */
+    }
+    
+    .search-bar {
+        flex-direction: column;
+        border-radius: 16px;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .filter-section {
+        transform: translateY(-20px);
+    }
+
+    .input-group {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+    }
+}
+
+/* แก้ไขสีตอนเอาเมาส์ชี้ใน Dropdown */
+.dropdown-content a:hover {
+    background-color: #1E88B8; /* เปลี่ยนจากสีฟ้าอ่อนเดิม เป็นสีเข้ม */
+    color: #ffffff;            /* เปลี่ยนตัวหนังสือเป็นสีขาว */
+}

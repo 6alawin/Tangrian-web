@@ -1,0 +1,127 @@
+#invest {
+    background-color: #D5F4FF;
+}
+#collab {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #46D3FA 100%);
+}
+
+.singlemachine, .stackmachine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em; 
+    padding: 2em 5%;
+}
+.singlemachine{
+    padding-bottom: 1em;
+}
+
+.singlemachine h1 {
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
+    color: #000;
+}
+.stackmachine h1 {
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
+    color: #000;
+}
+
+.machine_card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 900px;
+    padding: 2.5em;
+    gap: 3em;
+}
+.machine_info ul {
+    padding-left: 1.5em !important; 
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+}
+
+.machine_info li {
+    display: list-item !important; 
+    list-style-type: disc !important;
+    text-align: left;
+}
+
+.machine_img {
+    flex: 0 0 30%;
+    display: flex;
+    justify-content: center;
+}
+.machine_img img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+.stackmachine .machine_img img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+}
+
+.machine_info {
+    flex: 1;
+    text-align: left;
+    color: #222;
+}
+.machine_info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5em;
+}
+.feature-title {
+    font-size: 1rem;
+    margin-bottom: 0.3em;
+}
+.machine_info ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+}
+.price-spec p {
+    font-weight: bold;
+    margin-bottom: 0.2em;
+}
+.price-spec h3 {
+    font-size: 1.5rem;
+    font-weight: bold; 
+}
+.banner {
+    width: 100%;
+}
+.banner img {
+    width: 100%; 
+    height: auto; 
+    display: block;  
+    object-fit: cover; 
+}
+
+@media screen and (max-width: 768px) {
+    .machine_card {
+        flex-direction: column;
+        padding: 1.5em;
+        gap: 1.5em;
+    }
+    .machine_info {
+        width: 100%;
+    }
+    .dropdown-content a {
+        background-color: #F4FBFF; 
+    }
+    #collab {
+        background: #D5F4FF;
+        border-radius: 10px;
+    }
+}
