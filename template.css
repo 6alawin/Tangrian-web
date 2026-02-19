@@ -275,6 +275,7 @@ main {
         padding: 20px 0 !important;
         display: none; /* ซ่อนไว้ก่อน (รอ JS สั่งเปิด) */
         flex-direction: column;
+        z-index: 1000; /* ให้มันอยู่เหนือทุกอย่าง */
     }
     header {
         height: auto;

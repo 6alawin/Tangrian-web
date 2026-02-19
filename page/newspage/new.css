@@ -1,0 +1,75 @@
+#news {
+    background-color: #D5F4FF;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #46D3FA 100%);
+}
+
+#news-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* แบ่งเป็น 2 ช่องเท่ากัน (50% - 50%) */
+    gap: 20px; /* ระยะห่างระหว่างการ์ด (บนล่างซ้ายขวา) */
+    padding: 10px;
+}
+
+.container.py-5 {
+    padding: 2em 1em;
+    text-align: center;
+}
+
+/* 2. ถ้าหน้าจอเล็ก (มือถือ) ให้ยุบเหลือ 1 ช่อง */
+@media (max-width: 768px) {
+    #news-container {
+        grid-template-columns: 1fr; /* เต็มจอ 100% */
+    }
+    #news {
+        background: #D5F4FF;
+        border-radius: 10px;
+     }
+}
+
+/* --- ส่วนตกแต่ง Card (ปรับให้รูปไม่เบี้ยว) --- */
+.news-card {
+    display: flex; /* จัดรูปซ้าย-หนังสือขวา */
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 180px; /* กำหนดความสูงการ์ดให้เท่ากันทุกใบ */
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #eee; /* เส้นขอบบางๆ */
+}
+
+.news-img-col {
+    width: 40%; /* รูปเอาไป 40% */
+    height: 100%;
+}
+
+.news-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* พระเอก! ตัดรูปส่วนเกินออก ไม่ให้รูปเบี้ยว */
+}
+
+.news-body-col {
+    width: 60%; /* เนื้อหาเอาไป 60% */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-title {
+    font-size: 16px;
+    font-weight: bold;
+    /* ตัดคำถ้ายาวเกิน 3 บรรทัด */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.arrow-btn {
+    position: relative;
+    text-align: right;
+    color: #0056b3;
+}

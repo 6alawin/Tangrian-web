@@ -12,6 +12,10 @@ main .container {
     padding: 40px 20px;
     text-align: center;
 }
+#about-us {
+    background-color: #D5F4FF;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #46D3FA 100%);
+}
 
 /* รูปภาพในเนื้อหา */
 .img-fluid {
@@ -74,7 +78,7 @@ main .container {
 }
 
 /* Responsive สำหรับมือถือ */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 786px) {
     .brand-logo {
         font-size: 2.5rem;
     }
@@ -85,6 +89,10 @@ main .container {
         font-size: 1rem;
         padding: 0 10px;
     }
+    #about-us {
+        background: #D5F4FF;
+        border-radius: 10px;
+     }
 }
 
 /* จัดส่วนเนื้อหาด้านล่างให้อยู่กึ่งกลาง */
@@ -92,7 +100,7 @@ main .container {
     text-align: center;       /* สั่งให้ข้อความทั้งหมดในส่วนนี้อยู่ตรงกลาง */
     max-width: 900px;         /* กำหนดความกว้างไม่ให้ยาวเกินไป จะได้อ่านง่าย */
     margin: 0 auto;           /* จัดกล่องให้อยู่กลางหน้าจอ (ซ้าย-ขวา เท่ากัน) */
-    padding: 20px 15px;       /* เว้นระยะขอบเล็กน้อย */
+    padding: 0 10px 15px 15px;       /* เว้นระยะขอบเล็กน้อย */
 }
 
 /* ปรับแต่ง Paragraph ด้านในเพิ่มเติม */

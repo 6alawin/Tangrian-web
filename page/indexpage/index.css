@@ -5,6 +5,7 @@
     color: #005b8e;
 }
 #home {
+    background-color: #D5F4FF;
     background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #46D3FA 100%);
     color: #000; /* สีตัวอักษร */
     border-radius: 10px 10px 0 0; /* ทำให้ขอบมนด้านบน */
