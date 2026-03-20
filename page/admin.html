@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการสาขา - Admin Tangrian</title>
+    <link rel="icon" type="image/x-icon" href="/images/TRlogo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f6f8; color: #333; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { margin-bottom: 20px; color: #2c3e50; }
+        h2 { margin-bottom: 15px; color: #2c3e50; }
+
+        .form-card { background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label.field-label { display: block; font-weight: bold; margin-bottom: 6px; }
+        .form-group input[type="text"], .form-group textarea, .form-group select {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px;
+        }
+        .form-group textarea { resize: vertical; }
+
+        /* ✅ ใช้ label แทน div+onclick */
+        .upload-label {
+            display: block;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            min-height: 130px;
+            cursor: pointer;
+            padding: 10px;
+            transition: border 0.2s;
+        }
+        .upload-label:hover { border-color: #3498db; background: #f0f8ff; }
+
+        .upload-placeholder {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            min-height: 110px; color: #aaa;
+        }
+        .upload-placeholder i { font-size: 32px; margin-bottom: 6px; }
+
+        /* ✅ preview grid ข้างใน label */
+        .preview-grid {
+            display: flex; flex-wrap: wrap; gap: 8px;
+        }
+        .preview-grid img {
+            width: 90px; height: 90px;
+            object-fit: cover; border-radius: 8px;
+            border: 1px solid #ddd;
+            display: block; /* บังคับให้โชว์ */
+        }
+
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; }
+        .btn.save   { background: #2ecc71; color: #fff; }
+        .btn.cancel { background: #95a5a6; color: #fff; }
+        .btn.edit   { background: #3498db; color: #fff; }
+        .btn.delete { background: #e74c3c; color: #fff; }
+        .btn:hover { opacity: 0.85; }
+
+        .branch-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .branch-table th { background: #2c3e50; color: #fff; padding: 12px; text-align: left; }
+        .branch-table td { padding: 12px; border-bottom: 1px solid #eee; vertical-align: middle; }
+        .branch-table tr:last-child td { border-bottom: none; }
+        .branch-table td .btn { padding: 6px 12px; margin-right: 5px; font-size: 13px; }
+
+        .badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; color: #fff; }
+        .badge.tangrian { background: #27ae60; }
+        .badge.other    { background: #8e44ad; }
+
+        #loading { text-align: center; color: #888; padding: 15px; }
+        hr { margin: 30px 0; border: none; border-top: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🛠️ ระบบจัดการสาขา (Admin)</h1>
+
+    <div class="form-card">
+        <h2 id="form-title">เพิ่มสาขาใหม่</h2>
+        <form id="branch-form">
+            <input type="hidden" id="doc-id">
+
+            <div class="form-group">
+                <label class="field-label">ชื่อสาขา:</label>
+                <input type="text" id="name" required placeholder="เช่น สาขาอยุธยา">
+            </div>
+
+            <div class="form-group">
+                <label class="field-label">หมวดหมู่:</label>
+                <select id="category">
+                    <option value="tangrian">Tangrian (ร้านตังฆ์เหรียญ)</option>
+                    <option value="other">Other (ลูกค้าแฟรนไชส์)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="field-label">รายละเอียด:</label>
+                <textarea id="detail" rows="3" placeholder="รายละเอียดสาขา..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="field-label">รูปปก (Cover Image):</label>
+                <!-- ✅ input ซ่อน, label for="imageInput" จะเปิด dialog แทน -->
+                <input type="file" id="imageInput" accept="image/*" multiple style="display:none;">
+                <label for="imageInput" class="upload-label" id="coverBox">
+                    <div class="upload-placeholder" id="coverPlaceholder">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>คลิกเพื่อเลือกรูปปก</span>
+                    </div>
+                    <div class="preview-grid" id="coverPreview"></div>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label class="field-label">อัลบั้มรูปเพิ่มเติม (Gallery):</label>
+                <input type="file" id="galleryInput" accept="image/*" multiple style="display:none;">
+                <label for="galleryInput" class="upload-label" id="galleryBox">
+                    <div class="upload-placeholder" id="galleryPlaceholder">
+                        <i class="fa-solid fa-images"></i>
+                        <span>คลิกเพื่อเลือกรูป Gallery</span>
+                    </div>
+                    <div class="preview-grid" id="galleryPreview"></div>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label class="field-label">ลิงก์ Google Map:</label>
+                <input type="text" id="mapLink" placeholder="https://maps.google.com/...">
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn save">💾 บันทึกข้อมูล</button>
+                <button type="button" class="btn cancel" id="cancel-btn" onclick="resetForm()" style="display:none;">
+                    ✖ ยกเลิกแก้ไข
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <hr>
+    <h2>📋 รายชื่อสาขาทั้งหมด</h2>
+    <div id="loading">กำลังโหลดข้อมูล... ⏳</div>
+    <table class="branch-table">
+        <thead>
+            <tr><th>รูป</th><th>ชื่อสาขา</th><th>หมวด</th><th>จัดการ</th></tr>
+        </thead>
+        <tbody id="branch-list"></tbody>
+    </table>
+</div>
+<script src="/scripts/admin.js"></script>
+</body>
+</html>
